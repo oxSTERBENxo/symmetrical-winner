@@ -50,6 +50,7 @@ public class deleteNodesFromList {
         // индексите се делат со бројот 3 (multiples of three) (со исклучок на 1 ~ edge case)
         // Во 25та линија, проверувам дали големината на листата е поголема од индексот
         // кој што сакам да го избришам со цел да спречам IndexOutOfBoundsException исклучок
+        
     }
 
 }
