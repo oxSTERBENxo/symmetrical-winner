@@ -16,22 +16,28 @@ public class deleteSubListFromList {
         }
 
         int m = sc.nextInt(); // големина на подлистата
+
+        if (m == 0) { // Handle empty sublist
+            System.out.println(list);
+            return;
+        }
+        
         LinkedList<Integer> sublist = new LinkedList<Integer>();
         for (int i = 0; i < m; i++) {
             sublist.add(sc.nextInt());
         }
 
+        
         int suspect = sublist.getFirst(); // 4
-        boolean found = true;
-
 
 //        System.out.println(list);
 
         for (int i = 0; i < list.size(); i++) { // i ќе оди до list.size() бидејќи ќе бришеме елементи и ќе се менува големината
             int k = 1; // подготовка за евентуално барање
-            if (list.get(i) == suspect) { // ако ти личиш на осомничениот
+            if (list.get(i).equals(suspect) && i + m <= list.size()) { // ако ти личиш на осомничениот
+                boolean found = true; // можно е да има повеќе подлисти во листата
                 for (int j = i + 1; j < i + m; j++) { // посомнувај се и почни да бараш во наведениот ранг (od i+1 до i+m)
-                    if (list.get(j) != sublist.get(k)) { // ако не се идентични како подлистата, не се малтретирај, потрагата завршува
+                    if (!list.get(j).equals(sublist.get(k))) { // ако не се идентични како подлистата, не се малтретирај, потрагата завршува
                         found = false;
                         break;
                     }
