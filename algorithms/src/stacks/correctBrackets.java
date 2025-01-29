@@ -16,7 +16,7 @@ public class correctBrackets {
 
     public static void main (String[] args) throws IOException {
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); // нов начин на примање од стандарден влез
         String input = br.readLine();
 
         Stack<Character> stack = new Stack<>();
