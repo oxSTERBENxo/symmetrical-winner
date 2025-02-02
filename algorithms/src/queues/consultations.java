@@ -32,7 +32,7 @@ public class consultations {
         Queue<String> mms = new LinkedList<String>();
         LinkedList<String> events = new LinkedList<String>();
 
-        int n = Integer.parseInt(br.readLine().trim()); // број на студенти коишто чекаат консултации за
+        int n = Integer.parseInt(br.readLine().trim()); // број на студенти коишто чекаат консултации за АПС
         for (int i = 0; i < n; i++) {
             String input = br.readLine();
             String[] tokens = input.split("\\s+");
@@ -42,7 +42,7 @@ public class consultations {
             aps.offer(student);
         }
 
-        int m = Integer.parseInt(br.readLine().trim());
+        int m = Integer.parseInt(br.readLine().trim()); // број на студенти коишто чекаат консултации за ММС
         for (int i = 0; i < m; i++) {
             String student = br.readLine();
             mms.offer(student);
