@@ -53,8 +53,8 @@ public class organizationForExam {
         for (int i = 1; i <= eTestTerms; i++) {
             System.out.println("термин " + i + ":");
             int printed = 0;
-            while (printed < 20 && !eventETest.isEmpty()) {
-                System.out.println(eventETest.poll());
+            while (printed < 20 && !eventETest.isEmpty()) { // вака ги цепкам списоците, редоследот е веќе запазен
+                System.out.println(eventETest.poll()); // тука користам poll() за да го печатам првиот и воедно да ми се вадат од листата
                 printed++;
             }
         }
