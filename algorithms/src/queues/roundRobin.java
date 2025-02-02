@@ -55,8 +55,8 @@ public class roundRobin {
             input = br.readLine();
             String[] tokens = input.split(" ");
             String name = tokens[0];
-            int executionTime = Integer.parseInt(tokens[1]); // кога пристигнале
-            int timeOfArrival = Integer.parseInt(tokens[2]); // колку време им треба да го завршат процесот
+            int executionTime = Integer.parseInt(tokens[1]); // колку време им треба да го завршат процесот
+            int timeOfArrival = Integer.parseInt(tokens[2]); // кога пристигнале
             Process process = new Process(name, timeOfArrival, executionTime);
             processes.add(process); // потребно ми е ова за влезот да го исхенлдам
         }
