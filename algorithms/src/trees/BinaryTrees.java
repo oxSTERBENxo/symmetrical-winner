@@ -1,15 +1,11 @@
+package trees; // во него ми се ставени класите BNode и BTree
+              // ставени ќе се на GitHub
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Stack;
-import trees.*;
-
 
 
 public class BinaryTrees {
@@ -24,9 +20,13 @@ public class BinaryTrees {
 
     private static int countNonTerminalNodes(BNode<String> node) {
         if (node == null) return 0; // не си ништо не придонесуваш
-        if (node.left == null && node.right == null) return 0; // ако си лист, не придонесуваш, terminal јазол си, terminate the process
-        return 1 + countNonTerminalNodes(node.left) + countNonTerminalNodes(node.right); // чим сме тука ги помина сите тестови
-        // ти имаш барем едно дете (го помина тестот дека не си лист), придонесуваш на сумата и истовремено види твоите деца што ќе ги кажат
+        if (node.left == null && node.right == null) return 0; // ако си лист, не придонесуваш, terminal јазол си,
+                                                                // terminate the process
+
+        return 1 + countNonTerminalNodes(node.left) + countNonTerminalNodes(node.right);
+        // чим сме тука ги помина сите тестови
+        // ти имаш барем едно дете (го помина тестот дека не си лист),
+        // придонесуваш на сумата и истовремено види твоите деца што ќе ги кажат
     }
 
     public static int nodesWithTwoChildren(BNode<String> node) {
@@ -99,7 +99,7 @@ public class BinaryTrees {
         // или пак LCA да биде родител на двата клуча
     }
 
-    public static void main(String[] args) throws IOException, ParseException {
+    public static void main(String[] args) throws IOException {
 
         BTree<String> tree = new BTree<>(); // инстанцираме дрво
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -107,8 +107,11 @@ public class BinaryTrees {
         String[] tokens = line.split(" ");
         int n = Integer.parseInt(tokens[0]);
         int m = Integer.parseInt(tokens[1]);
-        HashMap<String, BNode<String>> map = new HashMap<>(); // мапа којашто ни помага брзо да пристапуваме до референците на јазлите
-        // ние ја имаме само вредноста нивна, и вредноста нивна се мапира во нивниот јазол (поинтер)
+        HashMap<String, BNode<String>> map = new HashMap<>(); // мапа којашто ни помага брзо да пристапуваме
+        // до референците на јазлите
+        // ние ја имаме само вредноста нивна,
+        // и вредноста нивна се мапира во нивниот јазол (поинтер)
+
         LinkedList<Integer> results = new LinkedList<>(); // да печатам почитко ниш спец
 
         for (int i = 0; i < n + m; i++) {
@@ -144,5 +147,16 @@ public class BinaryTrees {
             System.out.println(x);
         }
 
+        // ПОЈАСНУВАЊЕ:
+        // Читањето од влез за сите задачи е ист
+        // 5 3 (5 ставања во дрвото, 3 прашања за одреден јазол)
+        // root 1 (направи го 1 да е корен на дрвото)
+        // add 1 2 1 (додади го 2 како лево дете на 1)
+        // add 1 3 2 (додади го 3 како десно дете на 1)
+        // ask 3 (во зависност од задачата, треба да се отпечати резултатот за јазолот со вредност 3)
+        // Прашањето може да биде,
+        // која е максимум длабочината/висината
+        // на поддрвото каде што 3 е коренот
+        // height(BNode<Integer> node), каде node е референца на јазолот со вредност 3
     }
 }
