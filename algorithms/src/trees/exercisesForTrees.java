@@ -53,6 +53,12 @@ public class exercisesForTrees {
         System.out.println(findTheNode(tree.root, 6).info);
         System.out.println(levelOfNode(tree.root, 6));
 
+
+        // Оваа класа е повеќе како тест на методите кога првпат се запознавав
+        // со бинарните дрва и како тие функционираат во код.
+        // outdated сфаќања имам за рекурзија во класта,
+        // се уште не ми е јасно што се случува xD
+
     }
 
 }
