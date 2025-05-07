@@ -17,3 +17,5 @@
 П.С решението што го ставам во repo на GitHub не мора да значи дека од прва сум го искодирала и дека веднаш ми текнало
 
 Ova e od forkot na Stefan
+
+Ova e od forkot na Eva
